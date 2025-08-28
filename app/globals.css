@@ -1,0 +1,355 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens to black and white theme for clothing store */
+  --background: oklch(1 0 0); /* #ffffff - white */
+  --foreground: oklch(0.145 0 0); /* #000000 - black */
+  --card: oklch(1 0 0); /* #ffffff - white for clean cards */
+  --card-foreground: oklch(0.145 0 0); /* #000000 - black */
+  --popover: oklch(1 0 0); /* #ffffff - white */
+  --popover-foreground: oklch(0.145 0 0); /* #000000 - black */
+  --primary: oklch(0.145 0 0); /* #000000 - black primary color */
+  --primary-foreground: oklch(1 0 0); /* #ffffff - white */
+  --secondary: oklch(0.976 0.006 247.858); /* #f8fafc - light gray */
+  --secondary-foreground: oklch(0.145 0 0); /* #000000 - black */
+  --muted: oklch(0.976 0.006 247.858); /* #f8fafc - light gray */
+  --muted-foreground: oklch(0.368 0.017 252.89); /* #475569 - medium gray */
+  --accent: oklch(0.145 0 0); /* #000000 - black accent */
+  --accent-foreground: oklch(1 0 0); /* #ffffff - white */
+  --destructive: oklch(0.577 0.245 27.325); /* #dc2626 - red for errors */
+  --destructive-foreground: oklch(1 0 0); /* #ffffff - white */
+  --border: oklch(0.854 0.005 286.301); /* #d1d5db - light gray border */
+  --input: oklch(1 0 0); /* #ffffff - white */
+  --ring: oklch(0.145 0 0 / 0.5); /* black with opacity */
+  --chart-1: oklch(0.145 0 0); /* #000000 - black */
+  --chart-2: oklch(0.368 0.017 252.89); /* #475569 - medium gray */
+  --chart-3: oklch(0.708 0.017 252.89); /* #94a3b8 - light gray */
+  --chart-4: oklch(0.854 0.005 286.301); /* #d1d5db - lighter gray */
+  --chart-5: oklch(0.976 0.006 247.858); /* #f8fafc - lightest gray */
+  --radius: 0.5rem;
+  --sidebar: oklch(1 0 0); /* #ffffff - white */
+  --sidebar-foreground: oklch(0.145 0 0); /* #000000 - black */
+  --sidebar-primary: oklch(0.145 0 0); /* #000000 - black */
+  --sidebar-primary-foreground: oklch(1 0 0); /* #ffffff - white */
+  --sidebar-accent: oklch(0.976 0.006 247.858); /* #f8fafc - light gray */
+  --sidebar-accent-foreground: oklch(0.145 0 0); /* #000000 - black */
+  --sidebar-border: oklch(0.854 0.005 286.301); /* #d1d5db - light gray border */
+  --sidebar-ring: oklch(0.145 0 0 / 0.5); /* black with opacity */
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* Updated font variables for clothing store branding */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-inter);
+  --font-heading: var(--font-inter);
+  --font-signature: var(--font-signature);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Added typography classes for consistent heading styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-signature {
+    font-family: var(--font-signature);
+  }
+}
+
+/* Added professional animations and motion effects for clothing store */
+@layer utilities {
+  /* Fade in animation for sections */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide in animation for product cards */
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Smooth scale animation */
+  @keyframes smooth-scale {
+    from {
+      transform: scale(0.95);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  /* Bounce animation for discount badges */
+  @keyframes gentle-bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-3px);
+    }
+    60% {
+      transform: translateY(-2px);
+    }
+  }
+
+  /* Pulse animation for new arrivals */
+  @keyframes soft-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  /* Animation classes */
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-smooth-scale {
+    animation: smooth-scale 0.3s ease-out;
+  }
+
+  .animate-gentle-bounce {
+    animation: gentle-bounce 2s infinite;
+  }
+
+  .animate-soft-pulse {
+    animation: soft-pulse 2s infinite;
+  }
+
+  /* Hover effects for professional look */
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Smooth transitions for all interactive elements */
+  .smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Professional button hover effects */
+  .btn-professional {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-professional::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-professional:hover::before {
+    left: 100%;
+  }
+
+  /* Stagger animation delays for product grids */
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+  .stagger-5 {
+    animation-delay: 0.5s;
+  }
+  .stagger-6 {
+    animation-delay: 0.6s;
+  }
+  .stagger-7 {
+    animation-delay: 0.7s;
+  }
+  .stagger-8 {
+    animation-delay: 0.8s;
+  }
+
+  /* Loading shimmer effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar for horizontal product lists */
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 2px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 2px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+  }
+
+  /* Professional focus states */
+  .focus-professional:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    border-color: #000;
+  }
+
+  /* Smooth image loading */
+  .image-fade-in {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .image-fade-in.loaded {
+    opacity: 1;
+  }
+}
